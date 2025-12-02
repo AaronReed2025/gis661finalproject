@@ -49,101 +49,38 @@
       margin-top: 0;
       font-size: 1.8rem;
     }
-    .btn-primary {
-      display: inline-block;
+    .buttons {
       margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      border-radius: 999px;
-      border: none;
-      background: #457b9d;
-      color: white;
-      font-size: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .btn-primary:hover {
-      background: #1d3557;
-    }
-    section {
-      margin-top: 2rem;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    h3 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #666;
-      padding: 1rem;
-   <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Student Transit Access in San Bernardino County</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      line-height: 1.5;
-      background: #f5f5f7;
-      color: #222;
-    }
-    header {
-      background: #1d3557;
-      color: white;
-      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.4rem;
-    }
-    nav a {
-      color: #f1faee;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem 3rem;
-    }
-    .hero {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    .hero h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-block;
-      margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
       border-radius: 999px;
       border: none;
-      background: #457b9d;
-      color: white;
       font-size: 1rem;
       text-decoration: none;
       font-weight: 600;
     }
+    .btn-primary {
+      background: #457b9d;
+      color: white;
+    }
     .btn-primary:hover {
       background: #1d3557;
+    }
+    .btn-secondary {
+      background: white;
+      color: #1d3557;
+      border: 2px solid #1d3557;
+    }
+    .btn-secondary:hover {
+      background: #1d3557;
+      color: white;
     }
     section {
       margin-top: 2rem;
@@ -168,7 +105,8 @@
     <h1>Student Transit Access – San Bernardino County</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="map.html">Interactive Map</a>
+      <a href="map.html">ArcGIS Map</a>
+      <a href="leaflet.html">Leaflet Bike Map</a>
       <a href="analysis.html">Findings</a>
       <a href="data.html">Data &amp; Methods</a>
     </nav>
@@ -180,18 +118,21 @@
       <p>
         This project examines public transportation and bike path accessibility
         for high school and university students in urban areas of San Bernardino County.
-        Using Metrolink, Omnitrans bus routes, and bikeway data, the map highlights
-        where access is strong and where gaps exist.
+        Using Metrolink, Omnitrans bus routes, and bikeway data, the maps highlight
+        where access is strong and where gaps exist for public school students.
       </p>
-      <a class="btn-primary" href="map.html">View Interactive Map</a>
+      <div class="buttons">
+        <a class="btn-primary" href="map.html">View ArcGIS Web Map</a>
+        <a class="btn-secondary" href="leaflet.html">View Leaflet Bike Paths Map</a>
+      </div>
     </div>
 
     <section>
       <h3>Project Goals</h3>
       <ul>
-        <li>Visualize public transit and bike-path access around schools.</li>
+        <li>Visualize public transit and bike-path access around high schools and universities.</li>
         <li>Identify areas where students may lack convenient transportation options.</li>
-        <li>Support planning discussions about equity and mobility for youth.</li>
+        <li>Support planning discussions about equity and mobility for youth in San Bernardino County.</li>
       </ul>
     </section>
 
@@ -199,9 +140,13 @@
       <h3>Study Area & Population</h3>
       <p>
         The focus is on urbanized parts of San Bernardino County, with an emphasis
-        on high schools and universities. Layers include school locations,
-        Metrolink stations, Omnitrans bus routes, bike paths, and
-        demographic information relevant to student populations.
+        on public high schools and university campuses. Key layers include school
+        locations, Metrolink stations, Omnitrans bus routes/stops, bike paths, and
+        supporting demographic data related to student populations.
+      </p>
+      <p>
+        This site integrates an ArcGIS Online web map and a custom Leaflet map to
+        meet the course requirement of using both Esri and non-Esri web mapping tools.
       </p>
     </section>
   </main>
@@ -211,4 +156,3 @@
   </footer>
 </body>
 </html>
-
